@@ -1,0 +1,46 @@
+🚀 Google Sites Automation Bot (IIT Launchpilot)
+This Python script uses Selenium to automatically navigate through every internal page of the Launchpilot AI Google Site. It handles dynamic loading and ensures the bot stays within the iit.ac.lk domain.
+
+📋 Prerequisites
+Before running the script, ensure you have the following installed:
+
+Python 3.10+
+
+Google Chrome Browser
+
+VS Code (Recommended)
+
+⚙️ Setup Instructions
+1. Clone or Create the Project
+Create a new folder for the project and open it in VS Code.
+
+2. Create a Virtual Environment
+To keep your global Python installation clean, create a local environment:
+
+PowerShell
+python -m venv .venv
+3. Install Dependencies
+Run the following command to install the automation engine and the browser manager:
+
+PowerShell
+.\.venv\Scripts\python.exe -m pip install selenium webdriver-manager
+🚀 How to Run
+Create a file named app.py and paste the automation code.
+
+Run the script using the virtual environment's Python:
+
+PowerShell
+.\.venv\Scripts\python.exe app.py
+🛠️ Configuration Note
+Authentication: If the site requires an iit.ac.lk login, the browser window will open and wait. Simply log in manually, and the script will continue once the page content loads.
+
+Filtering: The script is set to only follow links containing sites.google.com/iit.ac.lk/launchpilot-ai to prevent it from wandering to external sites (like LinkedIn or YouTube).
+
+📄 How it Works
+Queue System: The bot starts with the Home URL.
+
+Link Extraction: It scans the page for all <a> tags.
+
+Validation: It checks if the link is internal and hasn't been visited yet.
+
+Loop: It adds new links to a queue and repeats until every page has been touched.
